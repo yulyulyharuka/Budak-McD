@@ -258,7 +258,7 @@
 
             var empty = false;
             $('.form-group input').each(function() {
-                if ($(this).val().length == 0) {
+                if ($(this).val().length == 0 || isNaN($(this).val()) ) {
                     empty = true;
                 }
             });
