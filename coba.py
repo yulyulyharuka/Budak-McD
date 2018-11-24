@@ -10,9 +10,9 @@ gnb_load = joblib.load('gnb_HeartDisease_model.joblib')
 
 app = Flask(__name__)
 
-@app.route('/index.html')
+@app.route('/index')
 def index():
-   return render_template('index')
+   return render_template('index.html')
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
