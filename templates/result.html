@@ -6,10 +6,7 @@
 <body>
    <script>
       var res = "<table><tr><td style='width: 1000px; color: black; text-align: center;'><strong>Value</strong></td></tr>";
-      {% for value in result %}
-         res+="<tr><td style='width: 1000px; text-align: left;'>" + {{value|tojson}} + "</td>";
-      {% endfor %}
-
+      res+="<tr><td style='width: 1000px; text-align: left;'>" + {{result|tojson}} + "</td>";
       res += "</table>";
       document.write(res);
    </script>
