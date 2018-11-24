@@ -31,9 +31,6 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#diagnoser">Diagnoser</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#about">About</a>
-            </li>
         </ul>
       
       <!-- Tab panes -->
@@ -46,6 +43,25 @@
                     </p>
                 </div>
                 <div class="container-fluid mt-5">
+                    <h4>By kelompok 
+                        <span style="display:inline;color:yellow; background-color:red;">
+                            Budak-McD
+                        </span>
+                        <span style="color:red;background-color: yellow">
+                            I'm lovin it!
+                        </span>
+                    </h4>
+                    <hr>
+                    <h5>Anggota Kelompok</h5>
+                    <ul>
+                        <li>Renjira Naufhal Dhiaegana       - 13516014</li>
+                        <li>M. Nurraihan Naufal             - 13516017</li>
+                        <li>Yuly Haruka Berliana Gunawan    - 13516031</li>
+                        <li>Raka Hadhyana                   - 13516099</li>
+                        <li>Naufal Putra Pamungkas          - 13516110</li>
+                    </ul>
+                    <hr>
+                    <h5>Deskripsi Tugas</h5>
                     <p>
                         Mahasiswa diminta untuk membangun aplikasi berbasis web yang dapat memberikan prediksi
                         penyakit jantung berdasarkan data medis dengan menggunakan teknik pembelajaran mesin. Aplikasi
@@ -55,7 +71,11 @@
                         dari penyakit jantung tersebut (0=false, 1-4=true untuk penyakit jantung). Pelaksanaan tugas ini akan
                         dilakukan dalam 2 tahap yaitu eksperimen dan pengembangan aplikasi web.
                     </p>
-
+                    <hr>
+                    <h5>How To Use</h5>
+                    <p>
+                        Kasih penjelasan disini ye
+                    </p>
                 </div> 
             </div>
 
@@ -64,122 +84,123 @@
                     <p class="display-4 pb-5">
                         Fill out patient's info here!
                     </p>
-                    <form action="/action_page.php">
+
+                    <form ng-app="" id="inform" method="POST">
                         <div class="form-group">
                             <label for="info">Age:</label>
-                            <input type="text" class="form-control" id="info">
+                            <input type="text" class="form-control" id="age" ng-model="age">
                         </div>
                         <div class="form-group">
                             <label for="info">Sex:</label>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">male
+                                    <input type="radio" class="form-check-input" name="sex" value="1">male
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">female
+                                    <input type="radio" class="form-check-input" name="sex" value="0">female
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="info">Chest-pain Type:</label>
+                            <label>Chest-pain Type:</label>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">typical angina
+                                    <input type="radio" class="form-check-input" name="cpt" value="1">typical angina
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">atypical angina
+                                    <input type="radio" class="form-check-input" name="cpt" value="2">atypical angina
                                 </label>
                             </div>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">non-anginal pain
+                                    <input type="radio" class="form-check-input" name="cpt" value="3">non-anginal pain
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">asymptotic
+                                    <input type="radio" class="form-check-input" name="cpt" value="4">asymptotic
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="info">Resting blood pressure:</label>
-                            <input type="text" class="form-control" id="info">
+                            <label for="rbp">Resting blood pressure:</label>
+                            <input type="text" class="form-control" id="rbp">
                         </div>
                         <div class="form-group">
-                            <label for="info">Serum cholesterol:</label>
-                            <input type="text" class="form-control" id="info">
+                            <label for="sc">Serum cholesterol:</label>
+                            <input type="text" class="form-control" id="sc">
                         </div>
                         <div class="form-group">
                             <label for="info">Fasting blood sugar > 120mg/dl:</label>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">true
+                                    <input type="radio" class="form-check-input" name="fbs" value="1">true
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">false
+                                    <input type="radio" class="form-check-input" name="fbs" value="0">false
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="info">Resting ECG:</label>
+                            <label for="recg">Resting ECG:</label>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">normal
+                                    <input type="radio" class="form-check-input" name="re" value="0">normal
                                 </label>
                             </div>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">having ST-T wave abnormality
+                                    <input type="radio" class="form-check-input" name="re" value="1">having ST-T wave abnormality
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">left ventricular hyperthropy
+                                    <input type="radio" class="form-check-input" name="re" value="2">left ventricular hyperthropy
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="info">Max-heart rate achieved:</label>
-                            <input type="text" class="form-control" id="info">
+                            <input type="text" class="form-control" id="mhra">
                         </div>
                         <div class="form-group">
                             <label for="info">Exercise induced angina:</label>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">yes
+                                    <input type="radio" class="form-check-input" name="eia" value="1">yes
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">no
+                                    <input type="radio" class="form-check-input" name="eia" value="0">no
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="info">ST depression:</label>
-                            <input type="text" class="form-control" id="info">
+                            <input type="text" class="form-control" id="std">
                         </div>
                         <div class="form-group">
                             <label for="info">Peak exercise ST segment:</label>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">upsloping
+                                    <input type="radio" class="form-check-input" name="pess" value="1">upsloping
                                 </label>
                             </div>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">flat
+                                    <input type="radio" class="form-check-input" name="pess" value="2">flat
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">downsloping
+                                    <input type="radio" class="form-check-input" name="pess" value="3">downsloping
                                 </label>
                             </div>
                         </div>
@@ -187,22 +208,22 @@
                             <label for="info">N major vessels colored by flourosopy:</label>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">0
+                                    <input type="radio" class="form-check-input" name="mvcf" >0
                                 </label>
                             </div>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">1
+                                    <input type="radio" class="form-check-input" name="mvcf">1
                                 </label>
                             </div>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">2
+                                    <input type="radio" class="form-check-input" name="mvcf">2
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">3
+                                    <input type="radio" class="form-check-input" name="mvcf">3
                                 </label>
                             </div>
                         </div>
@@ -210,36 +231,61 @@
                             <label for="info">Thal:</label>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">normal
+                                    <input type="radio" class="form-check-input" name="thal" value="3">normal
                                 </label>
                             </div>
                             <div class="form-check">
                             <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">fixed defect
+                                    <input type="radio" class="form-check-input" name="thal" value="6">fixed defect
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">reversable effect
+                                    <input type="radio" class="form-check-input" name="thal" value="7">reversable effect
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Diagnose Heart</button>
+                        <button type="submit" class="btn btn-primary" onclick="submitForm()">Diagnose Heart</button>
                     </form>
-
-<!--                     
-                    <div>
-                        <p>Nama: <input type="text" ng-model="name"></p>
-                        <p ng-bind="name"></p>
-                    </div> 
--->
-
+                    <p id="invalues"></p>
                 </div>            
             </div>
-            
-            <div class="tab-pane container fade mt-5" id="about">...</div>
         
         </div>
 
 </body>
+<script>
+    function submitForm(){
+        var age = $("#age").val();
+        var sex = $("input[name='sex']:checked").val();
+        var cpt = $("input[name='cpt']:checked").val();
+        var rbp = $("#rbp").val();
+        var sc = $("#sc").val();
+        var fbs = $("input[name='fbs']:checked").val();
+        var re = $("input[name='re']:checked").val();
+        var mhra = $("#mhra").val();
+        var eia = $("input[name='eia']:checked").val();
+        var std = $("#std").val();
+        var pess = $("input[name='pess']:checked").val();
+        var mvcf = $("input[name='mvcf']:checked").val();
+        var thal = $("input[name='thal']:checked").val();
+        
+        //diagnose here (use flask and python)
+
+        console.log(age);
+        console.log(sex);
+        console.log(cpt);
+        console.log(rbp);
+        console.log(sc);
+        console.log(fbs);
+        console.log(re);
+        console.log(mhra);
+        console.log(eia);
+        console.log(std);
+        console.log(pess);
+        console.log(mvcf);
+        console.log(thal);
+    }
+</script>
+
 </html>
