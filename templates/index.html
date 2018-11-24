@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     
+    <title>Heart Diagnoser</title>
 </header>
 
 <body>
@@ -245,9 +246,8 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" onclick="submitForm()">Diagnose Heart</button>
+                        <button type="submit" class="btn btn-primary" onclick="validateForm()" id="submit" disabled="disabled">Diagnose Heart</button>
                     </form>
-                    <p id="invalues"></p>
                 </div>            
             </div>
         
@@ -255,62 +255,23 @@
 
 </body>
 <script>
-    function submitForm(){
-        var patient_age = $("#age").val();
-        var patient_sex = $("input[name='sex']:checked").val();
-        var patient_cpt = $("input[name='cpt']:checked").val();
-        var patient_rbp = $("#rbp").val();
-        var patient_sc = $("#sc").val();
-        var patient_fbs = $("input[name='fbs']:checked").val();
-        var patient_re = $("input[name='re']:checked").val();
-        var patient_mhra = $("#mhra").val();
-        var patient_eia = $("input[name='eia']:checked").val();
-        var patient_std = $("#std").val();
-        var patient_pess = $("input[name='pess']:checked").val();
-        var patient_mvcf = $("input[name='mvcf']:checked").val();
-        var patient_thal = $("input[name='thal']:checked").val();
-        
-        //diagnose here (use flask and python)
+    $(document).ready(function() {
+        $('.form-group input').keyup(function() {
 
-        console.log(patient_age);
-        console.log(patient_sex);
-        console.log(patient_cpt);
-        console.log(patient_rbp);
-        console.log(patient_sc);
-        console.log(patient_fbs);
-        console.log(patient_re);
-        console.log(patient_mhra);
-        console.log(patient_eia);
-        console.log(patient_std);
-        console.log(patient_pess);
-        console.log(patient_mvcf);
-        console.log(patient_thal);
-                 
-        // passing data through json file
-        // var json = { age: patient_age, 
-        //              sex : patient_sex,
-        //              cpt : patient_cpt,
-        //              rbp : patient_rbp,
-        //              sc : patient_sc,
-        //              fbs : patient_fbs,
-        //              re : patient_re,
-        //              mhra :patient_mhra,
-        //              eia : patient_eia,
-        //              std : patient_eia,
-        //              pess : patient_pess,
-        //              mvcf : patient_mvcf,
-        //              thal : patient_thal};
-        
-        // var myJSON = JSON.stringify(json);
+            var empty = false;
+            $('.form-group input').each(function() {
+                if ($(this).val().length == 0) {
+                    empty = true;
+                }
+            });
 
-        // var jsonfile = require('jsonfile');
-        // var file = 'data.json';
-
-        // jsonfile.writeFile(file, myJSON, { spaces: 2 }, function (err) {
-        //     if (err) console.error(err)
-        // });
-
-    }
+            if (empty) {
+                $('#submit').attr('disabled', 'disabled');
+            } else {
+                $('#submit').attr('disabled', false);
+            }
+        });
+    });
 </script>
 
 </html>
