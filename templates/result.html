@@ -14,22 +14,33 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <!-- Ionicons for UI -->
-    <script src="https://unpkg.com/ionicons@4.4.7/dist/ionicons.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-
     <title>Form Result</title>
+    <style>
+      body,html{
+         height:100%;
+      }
+      .login-bg {
+         background: white;
+         background-image:
+            radial-gradient(lightblue 15%, transparent 0),
+            radial-gradient(lightblue 15%, transparent 0);
+            background-size: 20px 20px;
+            background-position: 0 0, 30px 30px;
+      }
+
+    </style>
 </header>
+
 <body>
    <script>
-   		var res = "<div class=\"row h-100 justify-content-center align-items-center\"><div class=\"jumbotron\"><h1>";
+      var res = "<div class=\"row h-100 justify-content-center align-items-center login-bg\">";
       if ({{result|tojson}} === "0") {
-      	res += "Congratulations!</h1><p>You were diagnosed with no heart disease</p></div></div>";
+         res += "<div style=\"background-color:green;color:white\" class=\"jumbotron\"><h1>Good News!</h1><p>The patient weren't diagnosed with a heart disease </p></div></div>";
       } else {
-      	res += "Sorry to say,</h1><p>You were diagnosed with heart disease</p></div></div>";
+         res += "<div style=\"background-color:red;color:white\" class=\"jumbotron\"><h1>The patient were diagnosed Heart Disease level "+{{result|tojson}}+",</h1><p>please treat the patient accordingly</p></div></div>";
       }
       document.write(res);
+      
    </script>
 </body>
 </html>
