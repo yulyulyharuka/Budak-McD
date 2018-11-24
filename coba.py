@@ -1,5 +1,29 @@
 from flask import Flask, render_template, request
 import json
+import pandas as pd
+from sklearn import metrics
+from sklearn.naive_bayes import GaussianNB
+
+# Reading Train Data
+
+heartD = pd.read_csv('tubes2_HeartDisease_train.csv')
+heartD_target = heartD['Column14']
+heartD_data = heartD.loc[:, :'Column13']
+heartD_feature_names = ['age', 'sex', 'chest-pain type', 'resting blod presure', 'serum cholestrol', 
+                        'fasting blood sugar above 120 mg/dl', 'resting ECG', 'max heart rate achieved', 'exercise induced angina',
+                       'ST depression induced', 'peak exercise ST segment', 'member of major vessel', 'thal']
+
+heartD_target_names = ['absence', 'presence', 'presence', 'presence', 'presence']
+
+# # fit a Naive Bayes model to the data
+# gnb = GaussianNB()
+# gnb_class = gnb.fit(heartD_data, heartD_target)
+# print(gnb_class)
+
+# # make predictions
+# expected = heartD_target
+# predicted = gnb_class.predict(testD)
+# # summarize the fit of the model
 
 app = Flask(__name__)
 
