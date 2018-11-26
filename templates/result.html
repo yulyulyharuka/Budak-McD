@@ -29,7 +29,7 @@
 
       <main role="main" class="inner cover">
         <h1 class="cover-heading">Diagnose Result :</h1>
-        <p class="lead">The patient were diagnosed Heart Disease level {{result}} </p>
+        <p class="lead" id="Message">The patient were diagnosed Heart Disease level {{result}} </p>
         <p class="lead">
           <a href="./index" class="btn btn-lg btn-secondary">Back</a>
         </p>
@@ -44,8 +44,9 @@
     </div>
 
     <script>
-    
-    
+      if({{result}} == 0){
+        document.getElementById("Message").innerHTML = "The patient weren't diagnosed with a heart disease"
+      }
     </script>
   </body>
 </html>
