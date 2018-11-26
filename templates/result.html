@@ -1,46 +1,51 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<header>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hearth Diagnoser</title>
+
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <title>Form Result</title>
-    <style>
-      body,html{
-         height:100%;
-      }
-      .login-bg {
-         background: white;
-         background-image:
-            radial-gradient(lightblue 15%, transparent 0),
-            radial-gradient(lightblue 15%, transparent 0);
-            background-size: 20px 20px;
-            background-position: 0 0, 30px 30px;
-      }
+    <!-- Custom styles for this template -->
+    <link href="static/styles/cover.css" rel="stylesheet">
 
-    </style>
-</header>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
 
-<body>
-   <script>
-      var res = "<div class=\"row h-100 justify-content-center align-items-center login-bg\">";
-      if ({{result|tojson}} === "0") {
-         res += "<div style=\"background-color:green;color:white\" class=\"jumbotron\"><h1>Good News!</h1><p>The patient weren't diagnosed with a heart disease </p></div></div>";
-      } else {
-         res += "<div style=\"background-color:red;color:white\" class=\"jumbotron\"><h1>The patient were diagnosed Heart Disease level "+{{result|tojson}}+",</h1><p>please treat the patient accordingly</p></div></div>";
-      }
-      document.write(res);
-      
-   </script>
-</body>
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+
+        <div class="inner">
+          <h3>Hearth Diagnoser</h3>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Diagnose Result :</h1>
+        <p class="lead">The patient were diagnosed Heart Disease level {{result}} </p>
+        <p class="lead">
+          <a href="./index" class="btn btn-lg btn-secondary">Back</a>
+        </p>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Website created by :</p>
+          <marquee scrolldelay="60">Renjira Naufhal Dhiaegana - M. Nurraihan Naufal - Yuly Haruka Berliana Gunawan - Raka Hadhyana - Naufal Putra Pamungkas</marquee>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+    
+    
+    </script>
+  </body>
 </html>
